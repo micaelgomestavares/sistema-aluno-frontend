@@ -45,5 +45,7 @@ Inicie o servidor
 
 - [@Micael Gomes](https://www.github.com/micaelgomestavares)
 - [@Maria Antônia](https://www.github.com/mariantoniafreitas)
+- [@Marcelo Fidelis](https://github.com/marcelofiddelis)
+- [@Julia Nunes](https://github.com/juju04102003)
 - [@Pedro Ferraiuoli](https://github.com/pedro1403)
 - [@Esther Sant'Ana](https://github.com/santesther)
