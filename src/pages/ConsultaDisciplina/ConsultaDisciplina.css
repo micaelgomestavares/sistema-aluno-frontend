@@ -1,0 +1,151 @@
+:root {
+  --cor-fundo: #3fa58b;  --cor-onte: #fff;  --cor-onte-secundaria: #999;
+  --cor-erro: #dc3545;
+}
+
+.Search {
+  background-color: var(--cor-fundo);
+  padding: 20px;
+}
+
+.Search h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--cor-fonte);
+}
+
+.ConsultaDisciplina {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.Search select,
+.Search input[type="text"] {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.Search input[type="text"]:focus,
+.Search select:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px var(--cor-fonte);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.Search li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.Search ul:empty {
+  display: none;
+}
+
+.disciplina-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.disciplina-item:hover {
+  background-color: #f5f5f5;
+}
+
+.disciplina-nome {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: Arial, sans-serif;
+  color: var(--cor-fonte);
+}
+
+.disciplina-detalhes {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Georgia, serif;
+  color: var(--cor-fonte-secundaria);
+}
+
+.disciplina-professor {
+  font-weight: bold;
+}
+
+.disciplina-horas {
+  color: var(--cor-fonte-secundaria);
+}
+
+.Search .error-message {
+  color: var(--cor-erro);
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.disciplina-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.disciplina-item:hover {
+  background-color: #f5f5f5;
+}
+
+.disciplina-nome {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: Arial, sans-serif;
+  color: var(--cor-fonte);
+}
+
+.disciplina-detalhes {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Georgia, serif;
+  color: var(--cor-fonte-secundaria);
+}
+
+.disciplina-professor {
+  font-weight: bold;
+}
+
+.disciplina-horas {
+  color: var(--cor-fonte-secundaria);
+}
+
+.Search .error-message {
+  color: var(--cor-erro);
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .Search {
+    padding: 10px;
+  }
+}
