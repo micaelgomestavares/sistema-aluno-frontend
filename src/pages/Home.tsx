@@ -30,6 +30,20 @@ const Home = () => {
               </a>
             </CardFooter>
           </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Disciplinas Inscritas</CardTitle>
+              <CardDescription>Cronograma das disciplinas.</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex justify-end">
+              <a href="/disciplinas">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </main>
