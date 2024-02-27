@@ -15,7 +15,7 @@ const Home = () => {
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Hello, world!</h1>
 
         <div className="grid grid-cols-4 gap-4 my-6">
-          
+
           <Card className="w-[350px] h-[180px]">
             <CardHeader>
               <CardTitle>Pedidos de Matrícula</CardTitle>
@@ -32,16 +32,18 @@ const Home = () => {
 
           <Card className="w-[350px] h-[180px]">
             <CardHeader>
-              <CardTitle>Disciplinas Inscritas</CardTitle>
-              <CardDescription>Cronograma das disciplinas.</CardDescription>
+              <CardTitle>Cronograma das disciplinas</CardTitle>
+              <CardDescription>Consulte o cronograma da sua matéria.</CardDescription>
             </CardHeader>
             <CardContent>
             </CardContent>
-            <CardFooter className="flex justify-end">
+            <CardFooter className="flex pt-0 justify-end">
               <a href="/disciplinas">
+                <Button>Acessar</Button>
+              </a>
             </CardFooter>
           </Card>
-            
+
           <Card className="w-[350px] h-[180px]">
             <CardHeader>
               <CardTitle>Disciplinas </CardTitle>
@@ -56,7 +58,6 @@ const Home = () => {
             </CardFooter>
           </Card>
         </div>
-
       </section>
     </main>
   );
