@@ -8,15 +8,14 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-
 const Home = () => {
-
   return (
     <main className="flex justify-center align-center">
       <section className="my-24">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Hello, world!</h1>
 
         <div className="grid grid-cols-4 gap-4 my-6">
+          
           <Card className="w-[350px] h-[180px]">
             <CardHeader>
               <CardTitle>Pedidos de Matrícula</CardTitle>
@@ -24,7 +23,7 @@ const Home = () => {
             </CardHeader>
             <CardContent>
             </CardContent>
-            <CardFooter className="flex justify-end">
+            <CardFooter className="flex pt-0 justify-end">
               <a href="/">
                 <Button>Acessar</Button>
               </a>
@@ -40,11 +39,24 @@ const Home = () => {
             </CardContent>
             <CardFooter className="flex justify-end">
               <a href="/disciplinas">
+            </CardFooter>
+          </Card>
+            
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Disciplinas </CardTitle>
+              <CardDescription>Verifique as suas disciplinas</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/consulta-disciplina">
                 <Button>Acessar</Button>
               </a>
             </CardFooter>
           </Card>
         </div>
+
       </section>
     </main>
   );
