@@ -3,6 +3,7 @@ import { disciplinas } from './Disciplinas';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import { Button } from '@/components/ui/button';
 
 const CursoFilter = ({ cursoSelecionado, setCursoSelecionado }: any) => {
   const cursos = [...new Set(disciplinas.map(disciplina => disciplina.curso))];
@@ -64,9 +65,11 @@ function ConsultaDisciplina() {
     <>
       <main className="flex justify-center align-center">
         <section className="my-24">
-          <h1 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl'>Consulta de Disciplinas</h1>
-
-          <Input type="text" placeholder="Pesquisar disciplina" className='mt-5' value={pesquisa} onChange={(event) => setPesquisa(event.target.value)} />
+          <div className="flex justify-between">
+            <h1 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl'>Consulta de Disciplinas</h1>
+            <a href="/"><Button>Voltar</Button></a>
+          </div>
+          <Input type="text" placeholder="Pesquisar disciplina" className='mt-3' value={pesquisa} onChange={(event) => setPesquisa(event.target.value)} />
           <div className="my-3">
             <CursoFilter cursoSelecionado={cursoSelecionado} setCursoSelecionado={setCursoSelecionado} />
             <SemestreFilter semestreSelecionado={semestreSelecionado} setSemestreSelecionado={setSemestreSelecionado} />

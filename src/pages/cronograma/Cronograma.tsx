@@ -1,5 +1,10 @@
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 import { useLocation } from "react-router-dom";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const Cronograma = () => {
     let { state } = useLocation();
@@ -16,18 +21,20 @@ const Cronograma = () => {
                     <br></br>
                 </div>
             )}
-            <div className="grid grid-cols-4 gap-4">
-                {cardInfo && cardInfo.cronograma.map((cronograma: { data: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; conteudo: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; resumo: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }, index: Key | null | undefined) => (
-                    <div key={index} className="border rounded p-4">
-                        <h2>{cronograma.data}</h2>
-                        <br />
-                        <p><strong>{cronograma.conteudo}</strong></p>
-                        <br />
-                        <p>{cronograma.resumo}</p>
-                        <hr />
-                    </div>
-                ))}
-            </div>
+            <section className="flex justify-center align-center mt-5">
+                <div className="flex flex-col justify-center align-center w-[54rem]">
+                    {cardInfo && cardInfo.cronograma.map((cronograma: { data: any; conteudo: any; resumo: any }, index: any) => (
+                        <Accordion key={index} type="single" collapsible>
+                            <AccordionItem value={cronograma.conteudo}>
+                                <AccordionTrigger className="font-bold">{cronograma.conteudo} - {cronograma.data}</AccordionTrigger>
+                                <AccordionContent>
+                                    {cronograma.resumo}
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    ))}
+                </div>
+            </section>
         </div>
     );
 }

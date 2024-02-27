@@ -27,27 +27,33 @@ const Disciplinas = () => {
     });
 
     return (
-        <div className="grid grid-cols-4 gap-4 my-6">
-
-            {cards.map((card: { titulo: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }, index: Key | null | undefined) => (
-                <Card key={index}>
-                    <CardHeader>
-                        <CardTitle>{card.titulo}</CardTitle>
-                        <CardDescription></CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        Acesse o cronograma para acompanhar o conteúdo das aulas da disciplina.
-                    </CardContent>
-                    <CardFooter>
-                        <Link
-                            to='/cronograma'
-                            state={{ cardInfo: card }}><Button> Acessar</Button>
-                        </Link>
-                    </CardFooter>
-                </Card>
-            ))}
-
-        </div >
+        <main className="flex justify-center align-center">
+            <section className="my-24">
+                <div className="flex justify-between">
+                    <h1 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl'>Cronograma das disciplinas</h1>
+                    <a href="/"><Button>Voltar</Button></a>
+                </div>
+                <div className="grid grid-cols-4 gap-4 my-6">
+                    {cards.map((card: any, index: any) => (
+                        <Card className="w-[350px]" key={index}>
+                            <CardHeader>
+                                <CardTitle>{card.titulo}</CardTitle>
+                                <CardDescription></CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                Acesse o cronograma para acompanhar o conteúdo das aulas da disciplina.
+                            </CardContent>
+                            <CardFooter className="flex justify-end">
+                                <Link
+                                    to='/cronograma'
+                                    state={{ cardInfo: card }}><Button> Acessar</Button>
+                                </Link>
+                            </CardFooter>
+                        </Card>
+                    ))}
+                </div>
+            </section>
+        </main>
     );
 };
 
