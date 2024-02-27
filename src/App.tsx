@@ -2,8 +2,8 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
 
-import Cronograma from "./pages/cronograma/Cronograma";
-import Disciplinas from "./pages/cronograma/Disciplinas";
+import Cronograma from "./pages/Cronograma/Cronograma";
+import Disciplinas from "./pages/Cronograma/Disciplinas";
 import ConsultaDisciplina from "./pages/ConsultaDisciplina/ConsultaDisciplina";
 
 
