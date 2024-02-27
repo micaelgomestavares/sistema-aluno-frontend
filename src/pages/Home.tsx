@@ -8,9 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-
 const Home = () => {
-
   return (
     <main className="flex justify-center align-center">
       <section className="my-24">
@@ -24,13 +22,28 @@ const Home = () => {
             </CardHeader>
             <CardContent>
             </CardContent>
-            <CardFooter className="flex justify-end">
+            <CardFooter className="flex pt-0 justify-end">
               <a href="/">
                 <Button>Acessar</Button>
               </a>
             </CardFooter>
           </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Disciplinas </CardTitle>
+              <CardDescription>Faça sua matrícula aqui.</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/consulta-disciplina">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
         </div>
+
       </section>
     </main>
   );
