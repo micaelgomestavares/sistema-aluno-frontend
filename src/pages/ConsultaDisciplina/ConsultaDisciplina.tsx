@@ -77,6 +77,7 @@ function ConsultaDisciplina() {
                 <CardHeader>
                   <CardTitle className='mb-[3px]'>{disciplina.nome}</CardTitle>
                   {disciplina.situacao === 'cursando' && <Badge className="max-w-[85px]">Matriculado</Badge>}
+                  {disciplina.situacao === 'concluído' && <Badge className="max-w-[75px]" variant={'concluded'}>Concluído</Badge>}
                 </CardHeader>
                 <CardContent className="flex flex-col">
                   <span className="disciplina-professor">Professor: {disciplina.professor}</span>
