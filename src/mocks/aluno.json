@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "João",
+        "curso": "Sistemas de Informação",
+        "materias": [
+            "Gestão de Projetos"
+        ]
+        
+    },
+    {
+        "nome": "Leticia",
+        "curso": "Sistemas de Informação",
+        "materias": [
+            "Gestão de Projetos"
+        ]
+    }
+]
