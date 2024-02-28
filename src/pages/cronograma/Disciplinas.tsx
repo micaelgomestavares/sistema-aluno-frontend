@@ -11,7 +11,6 @@ import {
 
 import { alunosData } from "../../mocks/aluno.ts";
 import { Link } from "react-router-dom";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 
 const Disciplinas = () => {
 
