@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { mensagens } from 'src/pages/Mensagens/mensagens-mock';
+import { mensagens } from 'src/pages/Mensagens/mensagens-mock.ts';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';

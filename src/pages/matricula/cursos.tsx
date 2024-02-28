@@ -8,8 +8,8 @@ import {
 } from "@/components/ui/card";
 import { Toaster, toast } from 'sonner';
 import { Checkbox } from "@/components/ui/checkbox";
-import { cursos } from "src/mocks/cursos";
-import { materiasMatriculadas } from "@/mocks/materiasMatriculadas";
+import { cursos } from "src/mocks/cursos.ts";
+import { materiasMatriculadas } from "@/mocks/materiasMatriculadas.ts";
 
 const Cursos = () => {
   return (

@@ -2,11 +2,11 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Home from "src/pages/Home";
 
-import Cronograma from "src/pages/Cronograma/Cronograma";
-import Disciplinas from "src/pages/Cronograma/Disciplinas";
-import ConsultaDisciplina from "src/pages/ConsultaDisciplina/ConsultaDisciplina";
-import Mensagens from "src/pages/Mensagens/Mensagens";
-import Cursos from "src/pages/Matricula/cursos";
+import Cronograma from "src/pages/Cronograma/Cronograma.tsx";
+import Disciplinas from "src/pages/Cronograma/Disciplinas.tsx";
+import ConsultaDisciplina from "src/pages/ConsultaDisciplina/ConsultaDisciplina.tsx";
+import Mensagens from "src/pages/Mensagens/Mensagens.tsx";
+import Cursos from "src/pages/Matricula/cursos.tsx";
 
 
 function App() {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { disciplinas } from 'src/pages/ConsultaDisciplina/Disciplinas';
+import { disciplinas } from 'src/pages/ConsultaDisciplina/Disciplinas.ts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
