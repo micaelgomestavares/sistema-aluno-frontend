@@ -4,7 +4,10 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "src/*": [
+        "./src/*"
+      ],
     },
     "target": "ESNext",
     "types": [

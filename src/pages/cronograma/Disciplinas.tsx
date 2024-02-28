@@ -9,7 +9,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 
-import { alunosData } from "../../mocks/aluno.ts";
+import { alunosData } from "src/mocks/aluno.ts";
 import { Link } from "react-router-dom";
 
 const Disciplinas = () => {
