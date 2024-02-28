@@ -57,6 +57,20 @@ const Home = () => {
               </a>
             </CardFooter>
           </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Mensagens </CardTitle>
+              <CardDescription>Verifique as mensagens dos seus professores</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/mensagens">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </main>
