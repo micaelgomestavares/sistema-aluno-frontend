@@ -7,6 +7,7 @@ import Disciplinas from "src/pages/Cronograma/Disciplinas.tsx";
 import ConsultaDisciplina from "src/pages/ConsultaDisciplina/ConsultaDisciplina.tsx";
 import Mensagens from "src/pages/Mensagens/Mensagens.tsx";
 import Cursos from "src/pages/Matricula/cursos.tsx";
+import ConsultaHorario from "./pages/ConsultaHorario/ConsultaHorario";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/consulta-disciplina" element={<ConsultaDisciplina />} />
           <Route path="/mensagens" element={<Mensagens />} />
           <Route path="/pedidos-matricula" element={<Cursos />} />
+          <Route path="/horarios" element={<ConsultaHorario />} />
         </Routes>
       </BrowserRouter>
     </>

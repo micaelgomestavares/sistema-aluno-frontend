@@ -46,6 +46,20 @@ const Home = () => {
 
           <Card className="w-[350px] h-[180px]">
             <CardHeader>
+              <CardTitle>Seus horários</CardTitle>
+              <CardDescription>Consulte os seus horários na semana.</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/horarios">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
               <CardTitle>Disciplinas </CardTitle>
               <CardDescription>Verifique as suas disciplinas</CardDescription>
             </CardHeader>
