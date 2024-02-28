@@ -12,8 +12,10 @@ const Home = () => {
   return (
     <main className="flex justify-center align-center">
       <section className="my-24">
-        <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl">Olá, aluno! 👋</h1>
-
+        <div className="flex justify-between items-center justify-content-center">
+          <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl">Olá, aluno! 👋</h1>
+          <img className="max-w-[300px]" src="src/assets/logo.svg"></img>
+        </div>
         <div className="grid grid-cols-4 gap-4 my-6">
 
           <Card className="w-[350px] h-[180px]">
