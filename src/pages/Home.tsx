@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <main className="flex justify-center align-center">
       <section className="my-24">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Hello, world!</h1>
+        <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl">Olá, aluno! 👋</h1>
 
         <div className="grid grid-cols-4 gap-4 my-6">
 
@@ -24,7 +24,7 @@ const Home = () => {
             <CardContent>
             </CardContent>
             <CardFooter className="flex pt-0 justify-end">
-              <a href="/">
+              <a href="/pedidos-matricula">
                 <Button>Acessar</Button>
               </a>
             </CardFooter>
