@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { mensagens } from './mensagens-mock';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const MensagemCard = ({ mensagem }: any) => {
   return (
@@ -12,6 +13,8 @@ const MensagemCard = ({ mensagem }: any) => {
             <CardTitle className='mb-[3px] flex space-between'>
               {mensagem.professor}
             </CardTitle>
+            {msg.situacao === 'trabalho' && <Badge variant={'trabalho'} className="w-[70px]">Trabalho</Badge>}
+            {msg.situacao === 'cancelada' && <Badge variant={'destructive'} className="w-[75px]">Cancelada</Badge>}
             <span className="text-sm">{msg.data}</span>
           </CardHeader>
           <CardContent className="flex flex-col">
