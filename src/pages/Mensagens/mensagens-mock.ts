@@ -10,6 +10,18 @@ export const mensagens = [
           "Bom dia a todos, passando só para avisar que as notas da P1 estão lançadas no sistema acadêmico. Lancei as notas das atividades feitas em aula já somadas e a nota da avaliação separada. Abraço!",
         situacao: "normal",
       },
+      {
+        data: "26/02/2024",
+        mensagem:
+          "Bom dia a todos, aula de amanhã será às 20:00. Abraço!",
+        situacao: "normal",
+      },
+      {
+        data: "28/02/2024",
+        mensagem:
+          "Bom dia a todos, as instruções sobre o trabalho da semana foram postadas. Qualquer dúvida, estou à disposição. Abraço!",
+        situacao: "normal",
+      },
     ],
   },
   {
