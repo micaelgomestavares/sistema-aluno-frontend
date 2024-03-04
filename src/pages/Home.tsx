@@ -10,7 +10,7 @@ import {
 
 const Home = () => {
   return (
-    <main className="flex justify-center align-center">
+    <main className="flex justify-center align-center h-full">
       <section className="my-24">
         <div className="flex justify-between items-center justify-content-center">
           <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl">Olá, aluno! 👋</h1>
@@ -76,13 +76,25 @@ const Home = () => {
 
           <Card className="w-[350px] h-[180px]">
             <CardHeader>
-              <CardTitle>Mensagens </CardTitle>
-              <CardDescription>Verifique as mensagens dos seus professores</CardDescription>
+              <CardTitle>Mensagens das disciplinas</CardTitle>
+              <CardDescription>Verifique as mensagens dos seus professores nas suas disciplinas</CardDescription>
+            </CardHeader>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/mensagens">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Suas Mensagens</CardTitle>
+              <CardDescription>Envie e receba mensagens dos seus professores</CardDescription>
             </CardHeader>
             <CardContent>
             </CardContent>
             <CardFooter className="flex pt-0 justify-end">
-              <a href="/mensagens">
+              <a href="/batepapo">
                 <Button>Acessar</Button>
               </a>
             </CardFooter>
