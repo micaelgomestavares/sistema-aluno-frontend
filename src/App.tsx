@@ -27,6 +27,7 @@ function App() {
           <Route path="/batepapo" element={<Chats />} />
           <Route path="/detalharprova" element={<DetalharProva />} />
           <Route path="/submetertrabalho" element={<SubmeterTrabalho />} />
+          <Route path="/segunda-chamada" element={<SegundaChamada />} />
         </Routes>
       </BrowserRouter>
     </>
