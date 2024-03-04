@@ -73,7 +73,7 @@ const Cursos = () => {
           ))}
         </div>
 
-        <Toaster richColors />
+        <Toaster position="top-right" richColors />
         <div className="flex justify-between">
           <Button variant={"destructive"} onClick={() => toast.error('Atualização de matricula cancelada!')}>
             Cancelar
