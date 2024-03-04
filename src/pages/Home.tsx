@@ -87,6 +87,20 @@ const Home = () => {
               </a>
             </CardFooter>
           </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Solicitação - 2° Chamada </CardTitle>
+              <CardDescription>Envie sua solicitação para realização da segunda chamada da prova perdida.</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/segunda-chamada">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </main>

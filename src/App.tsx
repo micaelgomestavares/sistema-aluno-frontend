@@ -2,12 +2,13 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Home from "src/pages/Home";
 
-import Cronograma from "src/pages/Cronograma/Cronograma.tsx";
-import Disciplinas from "src/pages/Cronograma/Disciplinas.tsx";
+import Cronograma from "src/pages/cronograma/Cronograma.tsx";
+import Disciplinas from "src/pages/cronograma/Disciplinas.tsx";
 import ConsultaDisciplina from "src/pages/ConsultaDisciplina/ConsultaDisciplina.tsx";
 import Mensagens from "src/pages/Mensagens/Mensagens.tsx";
-import Cursos from "src/pages/Matricula/cursos.tsx";
+import Cursos from "src/pages/matricula/cursos.tsx";
 import ConsultaHorario from "./pages/ConsultaHorario/ConsultaHorario";
+import SegundaChamada from "./pages/SolicSegChamada/SegundaChamada";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/mensagens" element={<Mensagens />} />
           <Route path="/pedidos-matricula" element={<Cursos />} />
           <Route path="/horarios" element={<ConsultaHorario />} />
+          <Route path="/segunda-chamada" element={<SegundaChamada />} />
         </Routes>
       </BrowserRouter>
     </>
