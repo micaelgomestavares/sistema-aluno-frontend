@@ -10,7 +10,7 @@ import ConsultaHorario from "src/pages/ConsultaHorario/ConsultaHorario";
 import Chats from "src/pages/Chats/Chats";
 import DetalharProva from "./pages/SubmeterTrabalho_DetalharProva/DetalharProva";
 import SubmeterTrabalho from "./pages/SubmeterTrabalho_DetalharProva/SubmeterTrabalho";
-
+import SegundaChamada from "./pages/SolicSegChamada/SegundaChamada";
 
 function App() {
   return (
