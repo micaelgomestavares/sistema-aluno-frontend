@@ -111,6 +111,20 @@ const Home = () => {
               </a>
             </CardFooter>
           </Card>
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Eventos</CardTitle>
+              <CardDescription>Verifique quais eventos estão disponíveis</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/eventos">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </main>
