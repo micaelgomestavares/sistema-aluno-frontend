@@ -12,6 +12,7 @@ import DetalharProva from "./pages/SubmeterTrabalho_DetalharProva/DetalharProva"
 import SubmeterTrabalho from "./pages/SubmeterTrabalho_DetalharProva/SubmeterTrabalho";
 import SegundaChamada from "./pages/SolicSegChamada/SegundaChamada";
 import Eventos from "src/pages/Eventos/Eventos.tsx"
+import ConsultarBoletim from "./pages/consultaboletim/ConsultarBoletim";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/submetertrabalho" element={<SubmeterTrabalho />} />
           <Route path="/segunda-chamada" element={<SegundaChamada />} />
           <Route path="/eventos" element={<Eventos />} />
+          <Route path="/consulta-boletim" element={<ConsultarBoletim/>}/>
         </Routes>
       </BrowserRouter>
     </>
