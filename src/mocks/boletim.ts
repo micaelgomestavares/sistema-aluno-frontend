@@ -15,8 +15,6 @@ export const boletim = {
             "f3": null,
             "mf": 8,
             "situacao": "Aprovado"
-
-
         },
         {
             "id": 2,
@@ -49,6 +47,22 @@ export const boletim = {
             "f3": null,
             "mf": 8,
             "situacao": "Aprovado"
+        },
+        {
+            "id": 4,
+            "nome": "Calculo I",
+            "ch": 120,
+            "turma": "686 - 20232.120.4N",
+            "total_faltas": 16,
+            "media_final": 4,
+            "a1": 3,
+            "f1": 1,
+            "a2": 1,
+            "f2": 1,
+            "a3": 5,
+            "f3": null,
+            "mf": 4,
+            "situacao": "Reprovado"
         }
     ],
     "2023/2": [
