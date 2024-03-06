@@ -6,10 +6,15 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
+import { useLocation } from "react-router-dom";
 import { provas } from 'src/pages/SubmeterTrabalho_DetalharProva/Provas.ts';
 
 function DetalharProva() {
-  const provaId = 2; // FAZER A LIGAÇÃO COM A PAGINA DE CONSULTA DE PROVAS
+  let { state } = useLocation();
+  const cardInfo = state?.cardInfo;
+  console.log(cardInfo);
+
+  const provaId = cardInfo.id; // FAZER A LIGAÇÃO COM A PAGINA DE CONSULTA DE PROVAS
   const prova = provas.find(p => p.id === provaId);
 
   return (
@@ -21,7 +26,7 @@ function DetalharProva() {
               <CardHeader className="flex items-left">
                 <div className="flex justify-between mb-10">
                   <h1 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl'>Detalhes da Prova</h1>
-                  <a href="/"><Button>Voltar</Button></a>
+                  <a href="/consultar"><Button>Voltar</Button></a>
                 </div>
                 <div className="w-full">
                   <CardTitle className="text-center mb-5 text-4xl font-bold leading-relaxed">{prova.titulo}</CardTitle>

@@ -5,15 +5,19 @@ import { Input } from "@/components/ui/input";
 import classNames from 'classnames';
 import { format } from "date-fns";
 import { useState } from 'react';
+import { useLocation } from "react-router-dom";
 import { trabalhos } from 'src/pages/SubmeterTrabalho_DetalharProva/Trabalhos.ts';
 
 function SubmeterTrabalho() {
+  let { state } = useLocation();
+  const cardInfo = state?.cardInfo;
+
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
   const [trabalhosState, setTrabalhosState] = useState(trabalhos);
-  const trabalhoId = 2; // FAZER A LIGAÇÃO COM A PAGINA DE CONSULTA DE PROVAS
+  const trabalhoId = cardInfo.id; // FAZER A LIGAÇÃO COM A PAGINA DE CONSULTA DE PROVAS
   const trabalho = trabalhosState.find((t) => t.id === trabalhoId);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,7 +62,7 @@ function SubmeterTrabalho() {
               <CardHeader className="flex items-left">
                 <div className="flex justify-between mb-10">
                   <h1 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl'>Submeter Trabalho</h1>
-                  <a href="/"><Button>Voltar</Button></a>
+                  <a href="/consultar"><Button>Voltar</Button></a>
                 </div>
                 <div className="w-full">
                   <CardTitle className="text-center mb-5 text-4xl font-bold leading-relaxed">{trabalho.titulo}</CardTitle>
