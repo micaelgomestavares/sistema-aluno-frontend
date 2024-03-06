@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { eventos } from 'src/pages/Eventos/Eventos.ts';
 
@@ -5,18 +6,18 @@ function ListarEventos() {
   const [eventosState, setEventosState] = useState(eventos);
   const [inscricoes, setInscricoes] = useState([]);
 
-  const handleInscricao = (eventoId, prazoInscricao) => {
+  const handleInscricao = (eventoId: any, prazoInscricao: any) => {
     const dataAtual = new Date();
-    
+
     if (dataAtual > prazoInscricao) {
       alert('O prazo foi ultrapassado!');
       return;
     }
 
     const eventoIndex = eventosState.findIndex(evento => evento.id === eventoId);
-    const evento = eventosState[eventoIndex];
+    const evento: any = eventosState[eventoIndex];
 
-    if (inscricoes.includes(eventoId)) {
+    if (inscricoes.includes(eventoId as never)) {
       setInscricoes(inscricoes.filter(id => id !== eventoId));
       setEventosState([
         ...eventosState.slice(0, eventoIndex),
@@ -25,7 +26,7 @@ function ListarEventos() {
       ]);
     } else {
       if (evento.vagas > 0) {
-        setInscricoes([...inscricoes, eventoId]);
+        setInscricoes([...inscricoes, eventoId as never]);
         setEventosState([
           ...eventosState.slice(0, eventoIndex),
           { ...evento, vagas: evento.vagas - 1 },
@@ -41,7 +42,7 @@ function ListarEventos() {
     <div className="container mx-auto px-4 py-8 mt-16">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-3xl font-semibold">Eventos disponíveis</h1>
-        <button className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"><a href="/">Voltar</a></button>
+        <a href="/"><Button>Voltar</Button></a>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {eventosState.map(evento => (
@@ -50,7 +51,7 @@ function ListarEventos() {
             <p className="text-gray-600 mb-2">Data: {evento.data}</p>
             <p className="text-gray-600 mb-4">{evento.descricao}</p>
             <p className="text-gray-600">Vagas disponíveis: {evento.vagas}</p>
-            {inscricoes.includes(evento.id) ? (
+            {inscricoes.includes(evento.id as never) ? (
               <button
                 onClick={() => handleInscricao(evento.id, evento.prazoInscricao)}
                 className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300"
