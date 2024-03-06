@@ -1,11 +1,11 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Home from "src/pages/Home";
-import Cronograma from "src/pages/cronograma/Cronograma.tsx";
-import Disciplinas from "src/pages/cronograma/Disciplinas.tsx";
+import Cronograma from "src/pages/Cronograma/Cronograma.tsx";
+import Disciplinas from "src/pages/Cronograma/Disciplinas.tsx";
 import ConsultaDisciplina from "src/pages/ConsultaDisciplina/ConsultaDisciplina.tsx";
 import Mensagens from "src/pages/Mensagens/Mensagens.tsx";
-import Cursos from "src/pages/matricula/cursos.tsx";
+import Cursos from "src/pages/Matricula/cursos.tsx";
 import ConsultaHorario from "src/pages/ConsultaHorario/ConsultaHorario";
 import Chats from "src/pages/Chats/Chats";
 import DetalharProva from "./pages/SubmeterTrabalho_DetalharProva/DetalharProva";
@@ -13,6 +13,7 @@ import SubmeterTrabalho from "./pages/SubmeterTrabalho_DetalharProva/SubmeterTra
 import SegundaChamada from "./pages/SolicSegChamada/SegundaChamada";
 import Eventos from "src/pages/Eventos/Eventos.tsx"
 import ConsultarBoletim from "./pages/consultaboletim/ConsultarBoletim";
+import ConsultaProvaTraba from "./pages/ConsultaProvaTraba/ConsultaProvaTraba";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/segunda-chamada" element={<SegundaChamada />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/consulta-boletim" element={<ConsultarBoletim/>}/>
+          <Route path="/consultar" element={<ConsultaProvaTraba />} />
         </Routes>
       </BrowserRouter>
     </>
