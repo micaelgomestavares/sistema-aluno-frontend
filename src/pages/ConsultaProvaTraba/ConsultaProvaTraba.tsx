@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { provas } from 'src/pages/SubmeterTrabalho_DetalharProva/Provas.ts';
+import { useState } from 'react';
 import { trabalhos } from 'src/pages/SubmeterTrabalho_DetalharProva/Trabalhos.ts';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { provas } from 'src/pages/SubmeterTrabalho_DetalharProva/Provas.ts';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const CursoFilter = ({ cursoSelecionado, setCursoSelecionado }: any) => {
-  const cursos = [...new Set(trabalhos.map(trabalhos => trabalhos.disciplina))];
+  const cursos = [...new Set(trabalhos.map(trabalho => trabalho.disciplina))];
 
   const handleChangeCurso = (event: any) => {
     setCursoSelecionado(event.target.value);
@@ -23,8 +24,8 @@ const CursoFilter = ({ cursoSelecionado, setCursoSelecionado }: any) => {
       ))}
     </select>
   );
-}; 
-  
+};
+
 function ConsultaProvaTraba() {
 
   const [cursoSelecionado, setCursoSelecionado] = useState('');
@@ -57,69 +58,85 @@ function ConsultaProvaTraba() {
     ? disciplinasCurso2.filter(prova => prova.disciplina.toLowerCase().includes(pesquisa.toLowerCase()))
     : disciplinasCurso2;
 
-
-    let trabalhosFiltrados;
-    if (filtroStatus === 'concluido') {
-      trabalhosFiltrados = disciplinasPesquisadas.filter(trabalho => trabalho.situacao === 'enviado');
-    } else if (filtroStatus === 'emaberto') {
-      trabalhosFiltrados = disciplinasPesquisadas.filter(trabalho => trabalho.situacao === '');
-    } else { // Caso seja 'todos' ou qualquer outra coisa, exibe todos os trabalhos
-      trabalhosFiltrados = disciplinasPesquisadas;
+  const getSituacaoBadge = (situacao: any) => {
+    if (situacao === "enviado") {
+      return <Badge className='max-w-[85px]' variant="concluded">Feito</Badge>;
+    } else if (situacao === "") {
+      return <Badge variant={'destructive'} className='max-w-[85px]'>Pendente</Badge>;
     }
+  };
 
+  const getItemTrabalho = (trabalho: any) => {
+    return (
+      <Card key={trabalho.id} className="w-[350px]">
+        <CardHeader>
+          <CardTitle className='mb-[3px]'>{trabalho.titulo}</CardTitle>
+          <div>
+            {getSituacaoBadge(trabalho.situacao)}
+            <Badge className='ml-2'>{trabalho.dataEntrega.toLocaleDateString('pt-BR')}</Badge>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p>{trabalho.descricao}</p>
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          <Link
+            to='/submetertrabalho'
+            state={{ cardInfo: trabalho }}><Button> Acessar</Button>
+          </Link>
+        </CardFooter>
+      </Card>
+    );
+  };
 
+  const getItemProva = (prova: any) => {
+    return (
+      <Card key={prova.id} className="w-[350px]">
+        <CardHeader>
+          <CardTitle className='mb-[3px]'>{prova.titulo} - {prova.disciplina}</CardTitle>
+          <Badge className='max-w-[85px]'>{prova.data.toLocaleDateString('pt-BR')}</Badge>
+        </CardHeader>
+        <CardContent className="flex flex-col">
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          <Link
+            to='/detalharprova'
+            state={{ cardInfo: prova }}><Button> Acessar</Button>
+          </Link>
+        </CardFooter>
+      </Card>
+    );
+  };
+
+  let trabalhosFiltrados; // Definindo a variável
+
+  switch (filtroStatus) {
+    case "concluido":
+      trabalhosFiltrados = disciplinasPesquisadas.filter(trabalho => trabalho.situacao === "enviado");
+      break;
+    case "emaberto":
+      trabalhosFiltrados = disciplinasPesquisadas.filter(trabalho => trabalho.situacao === "");
+      break;
+    default:
+      trabalhosFiltrados = disciplinasPesquisadas;
+  }
 
   let items;
-  if (tipoExibicao === 'trabalhos') {
-
-    {items = trabalhosFiltrados.map(trabalhos => (
-      <Card key={trabalhos.id} className="w-[350px]">
-         <CardHeader>
-                  <CardTitle className='mb-[3px]'>{trabalhos.titulo}</CardTitle>
-                  {trabalhos.situacao === 'enviado' && <Badge className="max-w-[85px]" variant={'concluded'}>{trabalhos.dataEntrega.toLocaleDateString('pt-BR')}</Badge>}
-                  {trabalhos.situacao === 'enviado' && <Badge className="max-w-[85px]" variant={'concluded'}>Feito</Badge>}
-                  {trabalhos.situacao === '' && <Badge className="max-w-[85px]">{trabalhos.dataEntrega.toLocaleDateString('pt-BR')}</Badge>}
-                  {trabalhos.situacao === '' && <Badge className="max-w-[85px]">Pendente</Badge>}
-                </CardHeader>
-      </Card>
-    ))};
-  } else if (tipoExibicao === 'provas') {
-    {items = provinhas.map(provas => (
-      <Card key={provas.id} className="w-[350px]">
-        <CardHeader>
-                  <CardTitle className='mb-[3px]'>{provas.titulo} - {provas.disciplina}</CardTitle>
-                  <Badge className="max-w-[85px]">{provas.data.toLocaleDateString('pt-BR')}</Badge>
-                </CardHeader>
-                <CardContent className="flex flex-col">
-                </CardContent>
-      </Card>
-    ))};
-  } else {
-    items = (
-      <>
-        {trabalhosFiltrados.map(trabalhos => (
-          <Card key={trabalhos.id} className="w-[350px]">
-            <CardHeader>
-                  <CardTitle className='mb-[3px]'>{trabalhos.titulo}</CardTitle>
-                  {trabalhos.situacao === 'enviado' && <Badge className="max-w-[85px]" variant={'concluded'}>{trabalhos.dataEntrega.toLocaleDateString('pt-BR')}</Badge>}
-                  {trabalhos.situacao === 'enviado' && <Badge className="max-w-[85px]" variant={'concluded'}>Feito</Badge>}
-                  {trabalhos.situacao === '' && <Badge className="max-w-[85px]">{trabalhos.dataEntrega.toLocaleDateString('pt-BR')}</Badge>}
-                  {trabalhos.situacao === '' && <Badge className="max-w-[85px]">Pendente</Badge>}
-                </CardHeader>
-          </Card>
-        ))}
-        {provinhas.map(provas => (
-          <Card key={provas.id} className="w-[350px]">
-            <CardHeader>
-                  <CardTitle className='mb-[3px]'>{provas.titulo} - {provas.disciplina}</CardTitle>
-                  <Badge className="max-w-[85px]">{provas.data.toLocaleDateString('pt-BR')}</Badge>
-                </CardHeader>
-                <CardContent className="flex flex-col">
-                </CardContent>
-          </Card>
-        ))}
-      </>
-    );
+  switch (tipoExibicao) {
+    case "trabalhos":
+      items = trabalhosFiltrados.map(getItemTrabalho);
+      break;
+    case "provas":
+      items = provinhas.map(getItemProva);
+      break;
+    case "todos":
+      items = (
+        <>
+          {trabalhosFiltrados.map(getItemTrabalho)}
+          {provinhas.map(getItemProva)}
+        </>
+      );
+      break;
   }
 
   return (
@@ -134,28 +151,27 @@ function ConsultaProvaTraba() {
           <div className="my-3">
             <CursoFilter cursoSelecionado={cursoSelecionado} setCursoSelecionado={setCursoSelecionado} />
 
-            <select value={tipoExibicao} onChange={handleChangeTipoExibicao}>
-            <option value="todos">Todos</option>
-            <option value="trabalhos">Trabalhos</option>
-            <option value="provas">Provas</option>
-          </select>
+            <select className='ml-4' value={tipoExibicao} onChange={handleChangeTipoExibicao}>
+              <option value="todos">Todos</option>
+              <option value="trabalhos">Trabalhos</option>
+              <option value="provas">Provas</option>
+            </select>
           </div>
-          
+
           <h1 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl'>Trabalhos e Provas: </h1>
 
-              <select value={filtroStatus} onChange={handleChangeFiltroStatus}>
-              <option value="todos">Todos</option>
-              <option value="concluido">Enviado</option>
-              <option value="emaberto">Pendente</option>
-            </select>
-        
+          <select className='mt-4' value={filtroStatus} onChange={handleChangeFiltroStatus}>
+            <option value="todos">Todos</option>
+            <option value="concluido">Enviado</option>
+            <option value="emaberto">Pendente</option>
+          </select>
+
           <div className="grid grid-cols-4 gap-4 my-6">
             {items}
           </div>
         </section>
-      </main >
+      </main>
     </>
   );
 }
-
 export default ConsultaProvaTraba;

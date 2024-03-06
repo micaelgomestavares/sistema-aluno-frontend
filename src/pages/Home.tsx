@@ -125,6 +125,21 @@ const Home = () => {
               </a>
             </CardFooter>
           </Card>
+
+
+          <Card className="w-[350px] h-[180px]">
+            <CardHeader>
+              <CardTitle>Consultar</CardTitle>
+              <CardDescription>Consulte suas provas e trabalhos.</CardDescription>
+            </CardHeader>
+            <CardContent>
+            </CardContent>
+            <CardFooter className="flex pt-0 justify-end">
+              <a href="/consultar">
+                <Button>Acessar</Button>
+              </a>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </main>
